@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="styles/style.css"/>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <title>SoftUni Blog</title>
+</head>
+<body>
+<header>
+    <div class="navbar navbar-default navbar-fixed-top text-uppercase">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">SoftUni Blog</a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12">
+                <article>
+                    <header class="popover-title">
+                        <h3>SoftUni Technology Fundamentals May 2018</h3>
+                        <h4>Lecture Notes 4: Arrays C#</h4>
+                    </header>
+
+                    <div class="list-group-item">
+                        <br/>
+                        <ol>
+                            <li>
+                                <strong>Definition </strong>: Collection of variables called elements. The elements are
+                                numbered, the numbers are called indices. The elements of a given array are of the same
+                                type. One dimensional arrays are called vectors, two dimensional arrays are called
+                                matrices.
+                            </li>
+                            <li><strong>Declaring an Array</strong>
+                                <ol>
+                                    <li>
+                                        DataType[] arrayName<br/>At this point the declared array is a reference which
+                                        does not have a value – it points to null. The memory for the elements
+                                        is not yet allocated.
+                                    </li>
+                                    <li>Allocate memory to the array with new
+                                        <ol>
+                                            <li>DataType[] arrayName = new DataType[x];</li>
+                                            <li>x – x elements are allocated in the dynamic memory</li>
+                                            <li>The default initial value for all elements is 0 for numeral types, null
+                                                for reference types and false for the bool type.
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>Allocate memory to the array explicitly
+                                        <ol>
+                                            <li>DataType[] arrayName = {1,2,3,4,5,6};</li>
+                                            <li>In this way we create and initialize the elements of the array at the
+                                                time of the declaration. We use {} instead of new.
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>Once memory is allocated an array has fixed length.</li>
+                                </ol>
+                            </li>
+                            <li><strong>Access to the elements of an array</strong>
+                                <ol>
+                                    <li>arrayName[index] = x; (the element at that index would be assigned the
+                                        value of x)
+                                    </li>
+                                    <li>Iteration through the elements of an array
+                                        <ol>
+                                            <li>For – allows both changes and access to the elements of an array</li>
+                                            <li>Foreach – allows only access to the elements of an array</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><strong>Split </strong>(x, StringSplitOptions.RemoveEmptyEntries) – allows you
+                                to split a string into an array.
+                                <ol>
+                                    <li>Split the string by x. x can be a string, char or array of strings or
+                                        chars.
+                                    </li>
+                                    <li>StringSplitOptions.RemoveEmptyEntries – optional, used when you split by
+                                        multiple chars or strings. For example if you are splitting by comma and space
+                                        and have consecutive comma and space within the string you are splitting, your
+                                        array would contain empty entries, which using this string split option will
+                                        remove.
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><strong>Linq</strong>
+                                <ol>
+                                    <li>arrayName.Select(int.Parse).ToArray() – allows you to iterate through each
+                                        element within the array and convert a string into an int. Linq returns a
+                                        collection of type IEnumerable. ToArray() converts the collection of type
+                                        IEnumerable into an array.
+                                    </li>
+                                    <li>Array.Reverse(arrayName); - reverse the array</li>
+                                    <li>Array.Copy(sourceArrayName, destinationArrayName, how many elements we need to
+                                        copy); - destination Array cannot be null – it does not have to be initialised
+                                        but memory should have been allocated for it
+                                    </li>
+                                    <li>Array.IndexOf (arrayName, element)</li>
+                                </ol>
+                            </li>
+                            <li><strong>Multidimensional arrays (rows and columns)</strong>
+                                <ol>
+                                    <li>Declaration: Int[,] ArrayName – there is a comma for each dimension, excluding
+                                        the
+                                        first one
+                                    </li>
+                                    <li>Memory Allocation: Int[,] ArrayName = new int[x,y] – we set the size of each
+                                        dimension (x rows, y columns). The number of elements = x*y.
+                                    </li>
+                                    <li>Initialization: Int[,] ArrayName = { {x,y,z},{x2,y2,z2} }</li>
+                                    <li>Accessing: ArrayName[x,y]. Each element is unique and can be identified with
+                                        indices from the array
+                                    </li>
+                                    <li>Length: Each dimension of an array has its own length and its own index.
+                                        ArrayName.GetLength(0) – gives you the length of the first dimension<br/>
+                                    </li>
+                                    <li>Iteration through the element of an array: Nested for loops – print, read,
+                                        populate
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><strong>Arrays of arrays (Jagged arrays)</strong>
+                                <ol>
+                                    <li>Definition: Arrays in which each row contains an array of its own, and that
+                                        array can have length different than those in the other rows.
+                                    </li>
+                                    <li>Declaration, Allocation and Initialisation:
+                                        <ol>
+                                            <li>Declare: int[][] ArrayName;</li>
+                                            <li>Allocate:
+                                                <ol>
+                                                    <li>ArrayName = new int[2][]</li>
+                                                    <li>ArrayName[0] = new int[5];</li>
+                                                    <li>ArrayName[1] = new int[3];</li>
+                                                </ol>
+                                            <li>Initialise: Int[][] arrayName = {new int[] {x,y,z}, new int[]
+                                                {x2,y2,z2}, new
+                                                int[] {x3,y3}}
+                                            </li>
+                                            <li>The elements of a jagged array can be one – dimensional and multi –
+                                                dimensional arrays
+                                                <ol>
+                                                    <li>Int [] [,] ArrayName = new int [x][,];</li>
+                                                    <li>ArrayName[0] = new int[,] {{x1,x2},{y1,y2}};</li>
+                                                    <li>ArrayName[1] = new int[,] {{z1,z1},{j1,j2}};</li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>Accessing elements: ArrayName[x][y]
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <small class="modal-footer">
+                        Source: <br/>
+                        SoftUni Programming Fundamentals Course, May 2018;<br/>
+                        Fundamentals of Computer Programming with CSharp - Nakov, Kolev & Co., 2013
+                    </small>
+
+                    <small class="author">
+                        Stanislava Petrova
+                    </small>
+
+                    <footer>
+                        <div class="pull-right">
+                            <a class="btn btn-default btn-xs" href="index.html">Back &raquo;</a>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container modal-footer">
+        <p>&copy; 2018 - Software University Foundation</p>
+    </div>
+</footer>
+</body>
+</html>

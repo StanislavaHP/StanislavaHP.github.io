@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="styles/style.css"/>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <title>SoftUni Blog</title>
+</head>
+<body>
+<header>
+    <div class="navbar navbar-default navbar-fixed-top text-uppercase">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">SoftUni Blog</a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-6">
+                <article>
+                    <header class="popover-title">
+                        <h3>SoftUni Technology Fundamentals May 2018</h3>
+                        <h4>Lecture Notes 3: Methods C#</h4>
+                    </header>
+
+                    <ol class="list-group-item">
+                        <li><strong>Methods Definition</strong> – if a fragment of the code is used more than ones, it
+                            is
+                            good to define it as a method. These are code subroutines which in other languages are also
+                            known as functions or procedures.
+                        </li>
+                        <li><strong>Why Use Methods?</strong>
+                            <ol>
+                                <li>Better structured program and more readable code</li>
+                                <li>Avoid Duplicate Code</li>
+                            </ol>
+                        </li>
+                        <li><strong>Method Declaration</strong></li>
+                    </ol>
+
+                    <small class="author">
+                        Stanislava Petrova
+                    </small>
+
+                    <footer>
+                        <div class="pull-right">
+                            <a class="btn btn-default btn-xs" href="viewpost3.html">Read More &raquo;</a>
+                        </div>
+                    </footer>
+                </article>
+                <div><br/></div>
+            </div>
+            <div class="col-md-6">
+                <article>
+                    <header class="popover-title">
+                        <h3>SoftUni Technology Fundamentals May 2018</h3>
+                        <h4>Lecture Notes 4: Arrays C#</h4>
+                    </header>
+
+                    <ol class="list-group-item">
+                        <li><strong>Definition </strong>: Collection of variables called elements. The elements are
+                            numbered, the numbers are called indices. The elements of a given array are of the same
+                            type.
+                            One dimensional arrays are called vectors, two dimensional arrays are called matrices.
+                        </li>
+                        <li>
+                            <strong>Declaring an Array</strong>
+                            <ol>
+                                <li>DataType[] arrayName (at this point the declared array is a reference which does
+                                    not have a value – it points to null. The memory for the elements is not yet
+                                    allocated)
+                                </li>
+                                <li>Allocate memory to the array with new - DataType[] arrayName = new DataType[x]
+                                    <ol>
+                                        <li>x – x elements are allocated in the dynamic memory</li>
+                                        <li>The default initial value for all elements is 0 for numeral types, null for
+                                            reference types and false for the bool type.
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>Allocate memory to the array explicitly
+                                    <ol>
+                                        <li>DataType[]arrayName = {1,2,3,4,5,6};</li>
+                                        <li>In this way we create and initialize the elements of the array at the time
+                                            of
+                                            the declaration. We use {} instead of new.
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>Once memory is allocated an array has fixed length.</li>
+                            </ol>
+                        </li>
+                        <li><strong>3.       Access to the elements of an array</strong></li>
+                    </ol>
+
+                    <small class="author">
+                        Stanislava Petrova
+                    </small>
+
+                    <footer>
+                        <div class="pull-right">
+                            <a class="btn btn-default btn-xs" href="viewpost4.html">Read More &raquo;</a>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container modal-footer">
+        <p>&copy; 2018 - Software University Foundation</p>
+    </div>
+</footer>
+</body>
+</html>

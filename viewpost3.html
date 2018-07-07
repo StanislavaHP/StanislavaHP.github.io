@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="styles/style.css"/>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <title>SoftUni Blog</title>
+</head>
+<body>
+<header>
+    <div class="navbar navbar-default navbar-fixed-top text-uppercase">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">SoftUni Blog</a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12">
+                <article>
+                    <header class="popover-title">
+                        <h3>SoftUni Technology Fundamentals May 2018</h3>
+                        <h4>Lecture Notes 3: Methods C#</h4>
+                    </header>
+
+                    <div class="list-group-item">
+                        <br/>
+                        <ol>
+                            <li><strong>Methods Definition</strong> – if a fragment of the code is used more than ones, it is
+                                good to define it as a method. These are code subroutines which in other languages are
+                                also known as functions or procedures.
+                            </li>
+                            <li><strong>Why Use Methods?</strong>
+                                <ol>
+                                    <li>Better structured program and more readable code</li>
+                                    <li>Avoid Duplicate Code</li>
+                                </ol>
+                            </li>
+                            <li><strong>Method Declaration</strong>
+                                <ol>
+                                    <li>Definition: method registration in the program, so it can be successfully
+                                        identified
+                                    </li>
+                                    <li>Syntax: [Static] &lt;return type&gt; &lt;method name&gt;([&lt;parameters list&gt;])
+                                        {code}
+                                    </li>
+                                    <li>Location:
+                                        <ol>
+                                            <li>Cannot be declared inside another method’s body (for example Main)</li>
+                                            <li>Is declared between the opening and closing brackets of a class</li>
+                                        </ol>
+                                    </li>
+                                    <li>&lt;return type&gt;: The data type can be void (for no data returned) or any
+                                        other data type.
+                                    </li>
+                                    <li>&lt;method_name&gt;: The Name of the method – should describe the function
+                                        declared within the method.
+                                    </li>
+                                    <li>&lt;parameters list&gt;: The variable(s) which is(are) to be used by the method,
+                                        if the method doesn’t use any variables we state ().
+                                        <ol>
+                                            <li>Default Values: We can initialise variables with default values. In this
+                                                case we don’t have to pass a value when calling the variable.
+                                            </li>
+                                            <li>Parameters and Arguments: Parameters are the elements in the parameter
+                                                list, arguments are the values passed during method invocation to the
+                                                parameters
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><strong>Method Implementation (Creation)</strong>
+                                <ol>
+                                    <li>Definition: Typing the code that resolves a particular task</li>
+                                    <li>Operator Return:
+                                        <ol>
+                                            <li>The returned variable could be in any data type under the one declared
+                                                in the method. So for example if you declare double you can return int.
+                                            </li>
+                                            <li>Return would terminate the method and return the value specified after
+                                                it. If you use return in a void method that would simply terminate the
+                                                method.
+                                            </li>
+                                            <li>The operator return can be called from multiple places in the code of
+                                                our method, but should be guaranteed that at least one of the operators
+                                                return that we have used will be reached while executing the method.
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>Variables:
+                                        <ol>
+                                            <li>As with cycles the scope of any variables declared within the method are
+                                                the {} of the method
+                                            </li>
+                                            <li>Variables inside a method are local</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><strong>Method Invocation</strong>
+                                <ol>
+                                    <li>Definition: The Process that invokes the already declared method. Call a method
+                                        by MethodName (). Pass any variables (if required) within the brackets.
+                                    </li>
+                                    <li>Location:
+                                        <ol>
+                                            <li>From the Main Program Method Main()</li>
+                                            <li>From some other Method</li>
+                                            <li>From its own body (recursion)</li>
+                                            <li>If a method is called in the same class where it is declared and
+                                                implemented it can be called at a line before the line at which it
+                                                is declared.
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>Passing variable
+                                        <ol>
+                                            <li>What types can be passed: Expressions or Arguments compatible with the
+                                                parameter type
+                                            </li>
+                                            <li>Effect: When an argument is passed to a method, the method takes a copy
+                                                of
+                                                the argument. If the declared parameter is of primitive type the usage
+                                                of the argument does not change the argument itself (a copy of the value
+                                                itself is being taken). If the declared parameter is of reference type,
+                                                because the address (object reference) is the one being copied any
+                                                changes
+                                                would be applied to the object(value) itself.
+                                            </li>
+                                            <li>Named Arguments: in general you should follow the order in which the
+                                                variables have been declared but you can switch the order if you
+                                                identify
+                                                the var name: MethodName (var1Name: x, var2Name: y)
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><strong>Method Result</strong>
+                                <ol>
+                                    <li>Initialise a variable with the result of a method</li>
+                                    <li>Use a method in an expression</li>
+                                    <li>Use the variable passed by a Method to pass to another Method</li>
+                                </ol>
+                            </li>
+                            <li><strong>Method Signature (Specification)</strong> – name of the method + parameter type + order
+                                in which the parameters are listed (the parameters names are irrelevant)
+                                <ol>
+                                    <li>Method Overloading (variations / overloads of the method) – two methods with
+                                        the same name but different variable
+                                    </li>
+                                    <li>If two methods with the same name are defined, method1 (int, float) method1
+                                        (float,int) – when passing arguments we need to specify the type of the
+                                        arguments,
+                                        we can’t just use method1 (5,5) we can use method1 ((float)5, (short)5)
+                                        or method1 (5f, 5).
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><strong>Program Execution</strong> – “The stack” stores information about the active subroutines
+                                (methods) of a computer program. It keeps track of the point to which each active
+                                subroutine
+                                should return control when it finished executing.
+                            </li>
+                            <li><strong>Best Practice:</strong>
+                                <ol>
+                                    <li>Method
+                                        <ol>
+                                            <li>Must resolve a distinct and well defined task</li>
+                                            <li>The method resolves the task it is created for or returns an error.</li>
+                                            <li>A method must have minimum depdency to the class in which the method is
+                                                declared and to other methods and classes. This means that the method
+                                                must
+                                                do its job by using the data that is passed to it as parameters but not
+                                                data that can be accessed from other places. Methods should not have
+                                                side
+                                                effects – change some global variables or print something on the console
+                                                in
+                                                the meantime.
+                                            </li>
+                                            <li>Should be short – avoid methods longer than 1 screen</li>
+                                        </ol>
+                                    </li>
+                                    <li>Method Name
+                                        <ol>
+                                            <li>Identifies what the method does</li>
+                                            <li>Starts with a capital Letter</li>
+                                            <li>Each Word starts with a capital Letter</li>
+                                            <li>Verb + Noun or Verb</li>
+                                        </ol>
+                                    </li>
+                                    <li>Parameters Name:
+                                        <ol>
+                                            <li>First Lower, all other Words Capital</li>
+                                            <li>Noun or Adj+Noun</li>
+                                            <li>It is good to also include the metric</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <small class="modal-footer">
+                        Source: <br/>
+                        SoftUni Programming Fundamentals Course, May 2018;<br/>
+                        Fundamentals of Computer Programming with CSharp - Nakov, Kolev & Co., 2013
+                    </small>
+
+                    <small class="author">
+                        Stanislava Petrova
+                    </small>
+
+                    <footer>
+                        <div class="pull-right">
+                            <a class="btn btn-default btn-xs" href="index.html">Back &raquo;</a>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container modal-footer">
+        <p>&copy; 2018 - Software University Foundation</p>
+    </div>
+</footer>
+</body>
+</html>
